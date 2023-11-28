@@ -1,0 +1,46 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+}
+
+body {
+    margin: auto;
+}
+
+#bell {
+    display: block;
+    width: 10vmin;
+    min-width: 1rem;
+    height: auto;
+    animation: ring 1.5s infinite ease-in-out;
+    cursor: pointer; 
+}
+
+#clapper-group {
+    transform-origin: top center;
+    animation: ring-clapper 1.5s infinite linear;
+}
+
+.ringing {
+    animation: none;
+    transform: rotate(0deg); 
+    transition: transform 1.5s ease-in-out; 
+
+    #clapper-group {
+        transform: rotate(0deg); 
+    }
+}
+
+@keyframes ring {
+    0% { transform: rotate(-30deg) }
+    50% { transform: rotate(30deg) }
+    100% { transform: rotate(-30deg) }
+}
+
+@keyframes ring-clapper {
+    0% { transform: rotate(0deg) }
+    20% { transform: rotate(20deg) }
+    70% { transform: rotate(-20deg) }
+    100% { transform: rotate(0deg) }
+}
